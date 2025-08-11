@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Web App</title>
+    <style>
+      :root { color-scheme: light dark; }
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, Helvetica, "Apple Color Emoji", "Segoe UI Emoji";
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.5;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      button {
+        appearance: none;
+        border: 0;
+        background: #3b82f6;
+        color: white;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      button:hover { background: #2563eb; }
+      #message {
+        margin-top: 1rem;
+        font-weight: 600;
+        color: #16a34a;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Simple Web App</h1>
+      <p>Click the button to see a confirmation message.</p>
+      <button id="actionButton" type="button">Press me</button>
+      <p id="message" role="status" aria-live="polite"></p>
+    </main>
+
+    <script>
+      const button = document.getElementById('actionButton');
+      const message = document.getElementById('message');
+
+      button.addEventListener('click', () => {
+        const text = 'Button successfully pressed!';
+        message.textContent = text;
+        console.log(text);
+      });
+    </script>
+  </body>
+</html>
